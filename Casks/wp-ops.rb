@@ -2,25 +2,25 @@
 cask "wp-ops" do
   binary "wp-ops", target: "trellis-ops"
 
-  version "5.16.0"
+  version "5.16.1"
 
   on_macos do
     on_arm do
-      sha256 "80651cb6e02d5668b39c08c905aebad5ade5209d80cd3c540ebc55fcb0e922f3"
+      sha256 "2f2debc8abdc0587ba493ece8675542825358101226f2b50d9bd14eb49f200fb"
       url "https://github.com/imagewize/wp-ops/releases/download/v#{version}/wp-ops_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "9d7dc6582ad37c3db11c23858e9434e5359c74fbcf00a1526b2b09441be47e39"
+      sha256 "ea0de1809ec004d9ce10f66387231f9e99239b2ce4be5ba4e0604669f09a0564"
       url "https://github.com/imagewize/wp-ops/releases/download/v#{version}/wp-ops_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "d014d3f73fce3d10677f2f65ff281bb3c684487e51a888401a9c546c57f152df"
+      sha256 "1d326dc1c8d6e978bca08c13f8ef5d5efc409cf42ecdf32313dd597335f5ba76"
       url "https://github.com/imagewize/wp-ops/releases/download/v#{version}/wp-ops_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "a7b47b027c82103c9c7a56c8d16f758b711660e50c5a619689651edae0b6a408"
+      sha256 "728dab00ae674da70d1383ff0419d0dbcd6393624b292b1439f5b8cbbc867474"
       url "https://github.com/imagewize/wp-ops/releases/download/v#{version}/wp-ops_#{version}_linux_amd64.tar.gz"
     end
   end
