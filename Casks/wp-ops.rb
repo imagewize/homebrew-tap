@@ -2,25 +2,31 @@
 cask "wp-ops" do
   binary "wp-ops", target: "trellis-ops"
 
-  version "5.24.4"
+  postflight_steps do
+    on_macos do
+      run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/wp-ops"]
+    end
+  end
+
+  version "5.24.5"
 
   on_macos do
     on_arm do
-      sha256 "9ccc21aa9876b705c6c2d7ca7a8f14a44ece6c6773b7950765885d2dd22192ab"
+      sha256 "4b8cde193ae648967cf2bae14708c75b91968aa4754e996436524980735a9fc0"
       url "https://github.com/imagewize/wp-ops/releases/download/v#{version}/wp-ops_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "53a61b8ef021a43286185a9ee2394f311748585628bab6aee8bbf329d58ac7c7"
+      sha256 "4a0d4b97d73379e6114076c52024f07fe45a2cd954028eeb2d926695d97453b5"
       url "https://github.com/imagewize/wp-ops/releases/download/v#{version}/wp-ops_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "42218b958a9be0237933aa0b5d2155b57068b868315a9a9944bf1c1693c37cfd"
+      sha256 "6a93d8238d0119591debe35744a034c298779ef0490dce4b168386a8ff8e3e1b"
       url "https://github.com/imagewize/wp-ops/releases/download/v#{version}/wp-ops_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "eabd945858813cad7d16a77cd8403e134027bccfea34c799b339005ce1067f56"
+      sha256 "77e59795403e26660efe9afebaedf4dfb42b1cc3f28c2933c330cfb99d878692"
       url "https://github.com/imagewize/wp-ops/releases/download/v#{version}/wp-ops_#{version}_linux_amd64.tar.gz"
     end
   end
@@ -34,12 +40,6 @@ cask "wp-ops" do
   end
 
   binary "wp-ops"
-
-  postflight do
-    if OS.mac?
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/wp-ops"]
-    end
-  end
 
   # No zap stanza required
 end
