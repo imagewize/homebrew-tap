@@ -8,25 +8,25 @@ cask "wp-ops" do
     end
   end
 
-  version "5.29"
+  version "5.30.0"
 
   on_macos do
     on_arm do
-      sha256 "e38b18c7f5883dc22a69f203251c87cc3db5c566a86dee5ef933f9081d65292a"
+      sha256 "a31e1573dbd78462137624115934e94d7050be6d21d9506a4d799f50b9bd5003"
       url "https://github.com/imagewize/wp-ops/releases/download/v#{version}/wp-ops_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "4e6b8b0b82ff41fb55c33df6d78762e7ce8c0b7e8b853db0281538ac3c2713b0"
+      sha256 "bbe005b1170cc20eedb6fc6c4dcc4f5183798d1b7f31306bd2d6eaa51bf8007d"
       url "https://github.com/imagewize/wp-ops/releases/download/v#{version}/wp-ops_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "3f2c623c1ac523ea2cf9ca171309a2c21985e6be4be43b0222d117b9e4f3025b"
+      sha256 "04f79da3251cffe04ba54a765c2c816ca6f9968faefc99876073d78f502fc352"
       url "https://github.com/imagewize/wp-ops/releases/download/v#{version}/wp-ops_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "594e6688afee66b8c96d1bfacf6fc98bf48cc258d9147062804eca30e3a2178a"
+      sha256 "818665eea209a7186feb760eb3760abaf45cd46df75117633deff780b77fd4fc"
       url "https://github.com/imagewize/wp-ops/releases/download/v#{version}/wp-ops_#{version}_linux_amd64.tar.gz"
     end
   end
